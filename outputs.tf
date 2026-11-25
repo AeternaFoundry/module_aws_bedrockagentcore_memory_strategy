@@ -14,6 +14,10 @@ output "bedrockagentcore_memory_strategies_memory_id" {
   description = "Map of memory_id values across all bedrockagentcore_memory_strategies, keyed the same as var.bedrockagentcore_memory_strategies"
   value       = { for k, v in aws_bedrockagentcore_memory_strategy.bedrockagentcore_memory_strategies : k => v.memory_id if v.memory_id != null && length(v.memory_id) > 0 }
 }
+output "bedrockagentcore_memory_strategies_memory_record_schema" {
+  description = "Map of memory_record_schema values across all bedrockagentcore_memory_strategies, keyed the same as var.bedrockagentcore_memory_strategies"
+  value       = { for k, v in aws_bedrockagentcore_memory_strategy.bedrockagentcore_memory_strategies : k => v.memory_record_schema if v.memory_record_schema != null && length(v.memory_record_schema) > 0 }
+}
 output "bedrockagentcore_memory_strategies_memory_strategy_id" {
   description = "Map of memory_strategy_id values across all bedrockagentcore_memory_strategies, keyed the same as var.bedrockagentcore_memory_strategies"
   value       = { for k, v in aws_bedrockagentcore_memory_strategy.bedrockagentcore_memory_strategies : k => v.memory_strategy_id if v.memory_strategy_id != null && length(v.memory_strategy_id) > 0 }
